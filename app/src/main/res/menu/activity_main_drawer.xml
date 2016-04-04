@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_grid"
+            android:icon="@drawable/ic_dashboard_24dp"
+            android:title="Grid" />
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_view_list_24dp"
+            android:title="List" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Settings" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_pt"
+            android:icon="@drawable/ic_popcorn"
+            android:title="Popular Portugues" />
+        <item
+            android:id="@+id/nav_en"
+            android:icon="@drawable/ic_popcorn"
+            android:title="Popular English" />
+        <item
+            android:id="@+id/nav_upcoming"
+            android:icon="@drawable/ic_upcoming"
+            android:title="Upcoming Portugues" />
+        <item
+            android:id="@+id/nav_popular"
+            android:icon="@drawable/ic_popular"
+            android:title="Upcoming English" />
+    </group>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/nav_author"
+                android:icon="@drawable/ic_face_24dp"
+                android:title="Author: crawlingcity" />
+            <item
+                android:id="@+id/nav_mail"
+                android:icon="@drawable/ic_quick_contacts_mail_24dp"
+                android:title="Mail: crawlingcity@gmail.com" />
+        </menu>
+    </item>
+
+</menu>

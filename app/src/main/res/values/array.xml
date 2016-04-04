@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="units">
+        <item>Upcoming</item>
+        <item>Popular</item>
+    </string-array>
+    <string-array name="units_values">
+        <item>upcoming</item>
+        <item>popular</item>
+    </string-array>
+
+    <string-array name="language">
+        <item>Portuguese</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>pt</item>
+        <item>en</item>
+    </string-array>
+</resources>
