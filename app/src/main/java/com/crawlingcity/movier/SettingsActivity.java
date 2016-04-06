@@ -25,6 +25,7 @@ public class SettingsActivity extends PreferenceActivity
         // updated when the preference changes.
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_units_key)));
         bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_language_key)));
+        PreferenceManager.setDefaultValues(this, R.xml.pref_general, false);
 
     }
 
