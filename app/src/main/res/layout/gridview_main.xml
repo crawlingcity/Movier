@@ -8,10 +8,13 @@
         android:id="@+id/gridViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:numColumns="2"
+        android:numColumns="1"
         android:fastScrollEnabled="false"
         android:smoothScrollbar="true"
         android:scrollingCache="true"
-        />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:clickable="true"
+        android:outlineProvider="bounds"
+        android:padding="8dp" />
 
 </FrameLayout>

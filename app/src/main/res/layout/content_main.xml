@@ -11,6 +11,8 @@
     android:id="@+id/teste"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.crawlingcity.movier.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:background="#303030">
 
 </RelativeLayout>

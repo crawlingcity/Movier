@@ -3,7 +3,6 @@ package com.crawlingcity.movier;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -54,9 +53,24 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        preencherListaFilmes();
+        }
+
+    private void preencherListaFilmes() {
+
         String endpoint=getString(R.string.pref_units_default);
-        String language=Locale.getDefault().getLanguage();
-        Toast.makeText(this,Locale.getDefault().getLanguage(),Toast.LENGTH_LONG).show();
+
+        String language;
+        if (getString(R.string.pref_units_default) !=Locale.getDefault().getLanguage()){
+            language=Locale.getDefault().getLanguage();
+        } else {
+            language=getString(R.string.pref_units_default);
+        }
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor prefsEditr = prefs.edit();
+        prefsEditr.putString("language", language);
+        prefsEditr.commit();
 
         Fragment fragment = new MovieFragmentBuilder(endpoint,language).build();
 
@@ -64,7 +78,7 @@ public class MainActivity extends AppCompatActivity
                 .beginTransaction()
                 .replace(R.id.teste, fragment, "fragmentCrawling")
                 .commit();
-        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -130,10 +144,6 @@ public class MainActivity extends AppCompatActivity
                 PreferenceManager.getDefaultSharedPreferences(this);
         String units = sharedPrefs.getString("units", getString(R.string.pref_units_key));
         String language = sharedPrefs.getString("language", getString(R.string.pref_language_key));
-
-        Bundle args = new Bundle();
-        args.putString("endpoint",units);
-        args.putString("language", language);
 
         Fragment fragmenta = new MovieFragmentBuilder(units,language).build();
 
