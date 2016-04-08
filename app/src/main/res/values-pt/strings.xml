@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Movier</string>
+    <string name="about_label">Acerca</string>
     <string name="action_settings">Definições</string>
-    <string name="navigation_drawer_close">Fechar Navegação</string>
-    <string name="navigation_drawer_open">Abrir Navegação</string>
-    <string name="pref_language_key"></string>
-    <string name="pref_language_label">Idioma</string>
+    <string name="drawer_grid_label">Grelha</string>
+    <string name="drawer_list_label">Listagem</string>
+    <string name="drawer_settings_label">Definições</string>
+    <string name="pref_language_label">Língua</string>
     <string name="pref_units_label">Listagem</string>
-    <string name="titles_activity_settings">Definições</string>
     <string name="pref_units_popular_label">Popular</string>
     <string name="pref_units_upcoming_label">Estreias</string>
+    <string name="titles_activity_settings">Definições</string>
     <string name="pref_lingua_en_label">Inglês</string>
     <string name="pref_lingua_pt_label">Português</string>
-    <string name="pref_units_en_label">Inglês</string>
 </resources>

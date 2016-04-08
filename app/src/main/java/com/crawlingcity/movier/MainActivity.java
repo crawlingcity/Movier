@@ -3,6 +3,7 @@ package com.crawlingcity.movier;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -17,6 +18,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.crawlingcity.movier.Fragment.MovieFragmentBuilder;
+
+import java.util.Locale;
 
 import butterknife.ButterKnife;
 
@@ -51,8 +54,9 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        String endpoint="popular";
-        String language="en";
+        String endpoint=getString(R.string.pref_units_default);
+        String language=Locale.getDefault().getLanguage();
+        Toast.makeText(this,Locale.getDefault().getLanguage(),Toast.LENGTH_LONG).show();
 
         Fragment fragment = new MovieFragmentBuilder(endpoint,language).build();
 
@@ -88,35 +92,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_grid) {
 
-
-        } else if (id == R.id.nav_popular) {
-            Fragment fragmenta = new MovieFragmentBuilder("upcoming","en").build();
-
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.teste, fragmenta, "fragmentCrawling")
-                    .commit();
-        } else if (id == R.id.nav_upcoming) {
-            Fragment fragmenta = new MovieFragmentBuilder("upcoming","pt").build();
-
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.teste, fragmenta, "fragmentCrawling")
-                    .commit();
-        } else if (id == R.id.nav_pt) {
-            Fragment fragmenta = new MovieFragmentBuilder("popular","pt").build();
-
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.teste, fragmenta, "fragmentCrawling")
-                    .commit();
-        } else if (id == R.id.nav_en) {
-            Fragment fragmenta = new MovieFragmentBuilder("popular","en").build();
-
-            getFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.teste, fragmenta, "fragmentCrawling")
-                    .commit();
         } else if (id == R.id.nav_list) {
 
 //            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
